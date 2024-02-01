@@ -11,6 +11,7 @@ const Section = ({status,tasks,setTasks,todos,inProgress,completed})=>{
                 }
                 return task
             }) 
+            localStorage.setItem('tasks', JSON.stringify(modifiedTasks))
             return modifiedTasks
         })
     }
