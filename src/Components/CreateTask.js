@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
-const CreateTask = ({tasks,setTasks}) => {
+const CreateTask = ({setTasks}) => {
     const [task, setTask]= useState({
         id:"",
         name: "",
@@ -13,6 +13,7 @@ const CreateTask = ({tasks,setTasks}) => {
         if(task.name){
             setTasks((prev)=>{
                 const taskList = [...prev, task] 
+                console.log('taskList',taskList)
                 localStorage.setItem('tasks', JSON.stringify(taskList))
                 return taskList
             })
