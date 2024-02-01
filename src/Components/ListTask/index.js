@@ -7,9 +7,9 @@ function ListTasks({tasks, setTasks}) {
     const [completed, setCompleted] = useState([])
 
     useEffect(()=>{
-        const fTodos = tasks.filter((task)=> task.status === 'todo')
-        const fInProgress = tasks.filter((task)=> task.status === 'inprogress')
-        const fCompleted = tasks.filter((task)=> task.status === 'completed')
+        const fTodos = tasks?.filter((task)=> task.status === 'todo')
+        const fInProgress = tasks?.filter((task)=> task.status === 'inprogress')
+        const fCompleted = tasks?.filter((task)=> task.status === 'completed')
 
         setTodos(fTodos)
         setInProgress(fInProgress)
