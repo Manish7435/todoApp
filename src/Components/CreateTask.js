@@ -14,8 +14,7 @@ const CreateTask = ({setTasks}) => {
         if(task.name.length<1) return
         
         setTasks((prev)=>{
-            const taskList = [...prev, task] 
-            console.log('taskList',taskList)
+            const taskList =Array.isArray(prev) ? [...prev, task] : [task];
             localStorage.setItem('tasks', JSON.stringify(taskList))
             return taskList
         })
