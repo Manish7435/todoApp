@@ -11,7 +11,7 @@ const Task = ({task,tasks,setTasks})=>{
       }))
 
     const handleDelete = (id)=>{
-        const fTasks = tasks.filter((task)=> task.id!== id)
+        const fTasks = tasks?.filter((task)=> task.id!== id)
         setTasks(fTasks)
         localStorage.setItem('tasks', JSON.stringify(fTasks))
     }
