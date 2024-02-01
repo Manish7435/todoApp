@@ -10,14 +10,16 @@ const CreateTask = ({setTasks}) => {
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        if(task.name){
-            setTasks((prev)=>{
-                const taskList = [...prev, task] 
-                console.log('taskList',taskList)
-                localStorage.setItem('tasks', JSON.stringify(taskList))
-                return taskList
-            })
-        }
+        
+        if(task.name.length<1) return
+        
+        setTasks((prev)=>{
+            const taskList = [...prev, task] 
+            console.log('taskList',taskList)
+            localStorage.setItem('tasks', JSON.stringify(taskList))
+            return taskList
+        })
+
         setTask({
             id:"",
             name: "",
